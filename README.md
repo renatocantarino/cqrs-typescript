@@ -1,4 +1,4 @@
-# cqrs typescript
+# CQRS  typescript
 
 1. CQRS pattern
 2. typescript
