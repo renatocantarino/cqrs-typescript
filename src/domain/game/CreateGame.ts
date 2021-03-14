@@ -1,4 +1,4 @@
-import { Games } from "../../../entity/Games";
+import { Games } from "../../entity/Games";
 import { getManager } from "typeorm";
 
 

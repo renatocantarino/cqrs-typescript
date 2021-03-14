@@ -2,11 +2,11 @@ var express = require('express')
 var gamesRouter = express.Router()
 import { Games } from '../entity/Games'
 
-import { POSTCommand } from '../commands/application/games/POSTGameCommand'
-import { GetAll } from '../queries/games/GetAll'
+import { CreateGameCommand } from '../commands/application/games/CreateGameCommand'
+import { GetAllQuery } from '../queries/games/GetAllQuery'
 
 gamesRouter.get('/', async (req, res, next) => {    
-    res.status(201).json(await new GetAll().execute());
+    res.status(201).json(await new GetAllQuery().execute());
 })
 
 gamesRouter.post('/create', (req, res, next) => {
@@ -14,7 +14,7 @@ gamesRouter.post('/create', (req, res, next) => {
     let game = new Games();
     game.Name = name;
 
-    res.status(201).json(new POSTCommand(game).execute());
+    res.status(201).json(new CreateGameCommand(game).execute());
 })
 
 export default gamesRouter

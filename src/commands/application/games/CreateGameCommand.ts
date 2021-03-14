@@ -1,8 +1,8 @@
 import { Games } from "../../../entity/Games";
-import * as DomainGameCommands from '../../domain/games';
+import * as DomainGameCommands from '../../../domain/game';
 
 
-export class POSTCommand<ICommand> {
+export class CreateGameCommand<ICommand> {
     private game: Games;
 
     constructor(game: Games) {
@@ -21,8 +21,7 @@ export class POSTCommand<ICommand> {
 
         const results = command.execute()
 
-        return results.status ?
-            { status: true } :
-            { status: false }
+        return results
+           
     }
 }
